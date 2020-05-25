@@ -4,7 +4,11 @@ import {
   getLeanMass,
 } from "./calculations.js";
 
-function getBodyCompositionFromMeasurements(height, measurements) {
+function getBodyCompositionFromMeasurements(
+  height,
+  measurements,
+  legacyMeasurments
+) {
   let bodyComposition = [];
 
   measurements.forEach((entry) => {
@@ -22,13 +26,20 @@ function getBodyCompositionFromMeasurements(height, measurements) {
     });
   });
 
-  return bodyComposition;
+  return [...bodyComposition, ...legacyMeasurments];
 }
 
-function transformData(data) {
+function transformData(data, legacyData) {
   const [{ height, measurements }] = data;
+  const [{ measurements: legacyMeasurments }] = legacyData;
 
-  return getBodyCompositionFromMeasurements(height, measurements);
+  const bodyComposition = getBodyCompositionFromMeasurements(
+    height,
+    measurements,
+    legacyMeasurments
+  );
+
+  return bodyComposition;
 }
 
 export { transformData };

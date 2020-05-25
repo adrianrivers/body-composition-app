@@ -1,10 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
-	import { data } from '../data/data.js';
+	import { data, legacyData } from '../data';
 	import { transformData } from './utils/transform-data.js'
 	import BodyCompositionTable from './components/BodyCompositionTable.svelte';
 
-	let bodyCompositionData = transformData(data);
+	let bodyCompositionData = transformData(data, legacyData);
 </script>
 
 <main>

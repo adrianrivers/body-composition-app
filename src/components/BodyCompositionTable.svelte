@@ -1,11 +1,10 @@
 <script>
   export let bodyCompositionData;
 
-  const getHumanReadableDate = (dateString) => {
-    const calendarDate = dateString.slice(0, 10).replace(/-/g, '.');
 
-    return calendarDate.split('.').reverse().join('.');
-  }
+  const formaHumanReadableDate = date =>  date.slice(0, 10).replace(/-/g, '.').split('.').reverse().join('.');
+  
+  const getHumanReadableDate = date => date.length > 10 ? formaHumanReadableDate(date) : date;
 </script>
 
 <style>
