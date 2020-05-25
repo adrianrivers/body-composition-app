@@ -9,19 +9,23 @@
 </script>
 
 <main>
+	<BodyCompositionTable 
+		bodyCompositionData={bodyCompositionData} 
+	/>
 	<BodyCompositionChart 
 		chartDateEntries={chartDateEntries} 
 		chartBfEntries={chartBfEntries} 
-	/>
-	<BodyCompositionTable 
-		bodyCompositionData={bodyCompositionData} 
 	/>
 </main>
 
 <style>
 	main {
-		margin: 3em;
-		max-width: 1400px;
 		margin: 0 auto;
+		padding: 2em;
+		max-width: 1400px;
+	}
+
+	:global(.container) {
+		margin: 3em 0;
 	}
 </style>
