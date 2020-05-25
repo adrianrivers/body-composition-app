@@ -4,17 +4,39 @@
   export let leanMass;
 </script>
 
-<style></style>
+<style>
+  table {
+    border-collapse: collapse
+  }
+
+  thead {
+    line-height: 3rem;
+    font-weight: bold;
+  }
+  
+  th {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  td, th {
+    border: 1px solid #000;
+    padding: 1rem;
+    text-align: center;
+  }
+</style>
 
 <table>
- <tr>
-  <th>Body Fat %</th>
-  <th>Fat Mass</th>
-  <th>Lean Mass</th>
- </tr>
- <tr>
-  <td>{bodyFatPercentage}</td>
-  <td>{fatMass}</td>
-  <td>{leanMass}</td>
- </tr>
+  <thead>Body Composition</thead>
+  <tr>
+    <th>Body Fat</th>
+    <th>Fat Mass</th>
+    <th>Lean Mass</th>
+    <th>Body Weight</th>
+  </tr>
+  <tr>
+    <td>{bodyFatPercentage}%</td>
+    <td>{fatMass}kg</td>
+    <td>{leanMass}kg</td>
+    <td>{fatMass + leanMass}kg</td>
+  </tr>
 </table>
