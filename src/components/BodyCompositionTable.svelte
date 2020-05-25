@@ -1,7 +1,11 @@
 <script>
-  export let bodyFatPercentage;
-  export let fatMass;
-  export let leanMass;
+  export let bodyCompositionData;
+
+  const getHumanReadableDate = (dateString) => {
+    const calendarDate = dateString.slice(0, 10).replace(/-/g, '.');
+
+    return calendarDate.split('.').reverse().join('.');
+  }
 </script>
 
 <style>
@@ -34,11 +38,13 @@
     <th>Lean Mass</th>
     <th>Body Weight</th>
   </tr>
-  <tr>
-    <td>25.05.2020</td>
-    <td>{bodyFatPercentage}%</td>
-    <td>{fatMass}kg</td>
-    <td>{leanMass}kg</td>
-    <td>{fatMass + leanMass}kg</td>
-  </tr>
+  {#each bodyCompositionData as entry}
+    <tr>
+      <td>{getHumanReadableDate(entry.date)}</td>
+      <td>{entry.bodyFatPercentage}%</td>
+      <td>{entry.fatMass}kg</td>
+      <td>{entry.leanMass}kg</td>
+      <td>{entry.weight}kg</td>
+    </tr>
+  {/each}
 </table>
