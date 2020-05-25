@@ -28,12 +28,14 @@
 <table>
   <thead>Body Composition</thead>
   <tr>
+    <th>Date</th>
     <th>Body Fat</th>
     <th>Fat Mass</th>
     <th>Lean Mass</th>
     <th>Body Weight</th>
   </tr>
   <tr>
+    <td>25.05.2020</td>
     <td>{bodyFatPercentage}%</td>
     <td>{fatMass}kg</td>
     <td>{leanMass}kg</td>

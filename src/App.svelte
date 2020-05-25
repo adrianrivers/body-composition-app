@@ -10,7 +10,6 @@
 		neck: 42,
 		waist: 94
 	}
-
 	let figures = {
 		bodyFatPercentage: 0,
 		fatMass: 0,
@@ -33,7 +32,12 @@
 </script>
 
 <main>
-	<BodyCompositionTable bodyFatPercentage={figures.bodyFatPercentage} fatMass={figures.fatMass} leanMass={figures.leanMass}></BodyCompositionTable>
+	<BodyCompositionTable 
+		bodyFatPercentage={figures.bodyFatPercentage} 
+		fatMass={figures.fatMass} 
+		leanMass={figures.leanMass}
+	/>
+
 </main>
 
 <style>
