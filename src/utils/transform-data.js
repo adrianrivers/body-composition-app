@@ -42,4 +42,33 @@ function transformData(data, legacyData) {
   return bodyComposition;
 }
 
-export { transformData };
+function formatDate(date) {
+  let dateArr;
+
+  if (date.length > 10) {
+    dateArr = date.slice(0, 10).replace(/-/g, ".").split(".");
+  } else {
+    dateArr = date.split(".").reverse();
+  }
+
+  dateArr[1] = dateArr[1] - 1;
+
+  return new Date(...dateArr);
+}
+
+function formatDataForChart(bodyCompositionData) {
+  let chartDateEntries = [];
+  let chartBfEntries = [];
+
+  bodyCompositionData.forEach((entry) => {
+    chartDateEntries.push(formatDate(entry.date));
+    chartBfEntries.push(entry.bodyFatPercentage);
+  });
+
+  return {
+    chartDateEntries,
+    chartBfEntries,
+  };
+}
+
+export { transformData, formatDataForChart };
